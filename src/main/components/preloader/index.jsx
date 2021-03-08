@@ -7,7 +7,7 @@ const Preloader = (props) => {
     return (
       <div className={`${className || ''} preloader`}>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32px" height="32px" viewBox="0 0 128 128">
-          <rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" />
+          <rect x="0" y="0" width="100%" height="100%" fill="none" />
           <g>
             <circle cx="16" cy="64" r="16" fill="#2a2a2a"/>
             <circle cx="16" cy="64" r="14.344" fill="#2a2a2a" transform="rotate(45 64 64)"/>
