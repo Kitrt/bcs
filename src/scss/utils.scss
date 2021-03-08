@@ -1,6 +1,10 @@
+@import "~include-media/dist/include-media";
+
 :root {
   --black: #2A2A2A;
   --gray: #60759A;
   --blue: #016EF2;
   --dark-blue: #154373;
 }
+
+$breakpoints: (xxl: 1440px, xl: 1180px, lg: 1000px, md: 768px, sm: 640px, xs: 480px);

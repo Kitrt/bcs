@@ -4,7 +4,13 @@
 @import "scss/main-page";
 @import "scss/components";
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
+  min-height: 100vh;
   font-family: "Suisse Intl", sans-serif;
+  background: linear-gradient(180deg, #F7F7F7 0%, #FFFFFF 100%, #FFFFFF 100%);
   color: var(--black);
 }

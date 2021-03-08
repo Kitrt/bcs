@@ -38,12 +38,12 @@ const ListByCategory = (props) => {
     <div className="list-by-category">
       <Preloader loader={!data || data.preload}>
         <React.Fragment>
-          <div className="list-by-category__wrapper">
-            {renderArray.map((props) => <CardByList key={props.id} data={props}/>)}
+          <div className="list-by-category__list">
+            {renderArray.map((props) => <CardByList key={props.id} data={props} className="list-by-category__item"/>)}
           </div>
           {data && (Math.ceil(data['data'].length / 3) > data['page'] && Math.ceil(data['data'].length / 3) !== data['page']) &&
-          <div className="list-by-category__btn">
-            <button type="button" onClick={() => onNextPage(++data['page'])}>Смотреть ещё</button>
+          <div className="list-by-category__bottom">
+            <button type="button" className="list-by-category__btn" onClick={() => onNextPage(++data['page'])}>Смотреть ещё</button>
           </div>
           }
         </React.Fragment>

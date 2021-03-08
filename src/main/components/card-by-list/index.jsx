@@ -1,15 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import moment from 'moment'
+import 'moment/locale/ru'
+
+moment.locale('ru')
 
 const CardByList = (props) => {
-  const {data} = props
+  const {data, className} = props
   return (
-    <div className="card-by-list">
+    <div className={`${className || ''} card-by-list`}>
       <div className="card-by-list__marker">{data.category}</div>
       <div className="card-by-list__title">{data.title}</div>
       <div className="card-by-list__img"><img src={data.img} alt="img"/></div>
       <div className="card-by-list__bottom">
-        <div className="card-by-list__date">{data.date}</div>
+        <div className="card-by-list__date">{moment(data.date).format('DD MMM YYYY, HH:mm')}</div>
         <div className="card-by-list__actions-list">
           <div className="card-by-list__actions-item">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,15 +43,18 @@ const CardByList = (props) => {
 }
 
 CardByList.propTypes = {
-  id: PropTypes.number,
-  category: PropTypes.string,
-  title: PropTypes.string,
-  img: PropTypes.string,
-  date: PropTypes.string,
-  view_count: PropTypes.number,
-  comment_count: PropTypes.number,
-  like_count: PropTypes.number,
-  more: PropTypes.string,
+  className: PropTypes.string,
+  data: PropTypes.shape({
+    id: PropTypes.number,
+    category: PropTypes.string,
+    title: PropTypes.string,
+    img: PropTypes.string,
+    date: PropTypes.string,
+    view_count: PropTypes.number,
+    comment_count: PropTypes.number,
+    like_count: PropTypes.number,
+    more: PropTypes.string,
+  })
 }
 
 export default React.memo(CardByList)

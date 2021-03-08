@@ -1,0 +1,9 @@
+.main-page {
+  max-width: 1192px;
+  margin: 0 auto;
+  padding: 72px 16px;
+
+  @include media("<sm") {
+    max-width: 100%;
+  }
+}
