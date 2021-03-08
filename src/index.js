@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {MainPage} from './main'
+import './index.scss'
+import MainPage from './main'
 
 ReactDOM.render(
   <MainPage />,

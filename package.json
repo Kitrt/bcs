@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "include-media": "^1.4.9",
+    "nanoid": "^3.1.20",
     "normalize-scss": "^7.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -29,6 +30,7 @@
     ]
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "parserOptions": {
       "sourceType": "module"
     },
@@ -50,6 +52,8 @@
       ],
       "no-prototype-builtins": "off",
       "no-console": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "react/prop-types": "off",
       "quotes": [
         "error",
         "single",
