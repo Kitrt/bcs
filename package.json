@@ -3,25 +3,65 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.1",
+    "axios": "^0.21.1",
+    "include-media": "^1.4.9",
+    "normalize-scss": "^7.0.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "node-sass": "^5.0.0",
+    "pre-commit": "^1.2.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext .js,.ts,.tsx,.jsx src/** --ignore-pattern *.scss --ignore-pattern *.jpg --ignore-pattern *.png --ignore-pattern *.ttf --ignore-pattern *.woff --ignore-pattern *.woff2 --ignore-pattern *.svg"
+  },
+  "pre-commit": {
+    "run": [
+      "lint"
+    ]
   },
   "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "commonjs": true,
+      "es6": true
+    },
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "no-prototype-builtins": "off",
+      "no-console": "off",
+      "quotes": [
+        "error",
+        "single",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   },
   "browserslist": {
     "production": [
